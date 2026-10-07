@@ -17,6 +17,17 @@ body {
   padding: 2.5rem 1rem;
 }
 
+.badge {
+  background-color: #2563eb;
+  color: white;
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
 .hero h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -26,7 +37,18 @@ body {
   font-size: 0.95rem;
   color: #cbd5e1;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 1.2rem auto;
+  line-height: 1.4;
+}
+
+.garantias {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  font-weight: 500;
 }
 
 .services-container {
