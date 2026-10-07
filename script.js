@@ -1,18 +1,13 @@
 function enviarWhatsApp(servicio) {
-  // Tu número a 10 dígitos con clave de México (521)
+  // Tu número telefónico a 10 dígitos
   const telefono = "5215560760561"; 
   
+  // Mensaje personalizado para el servicio seleccionado
   const mensaje = `Hola, vi tu página web y estoy interesado en una cotización para un trabajo de *${servicio}*. ¿Tienes disponibilidad?`;
   
-  // Detecta si es un dispositivo móvil o PC para usar el enlace adecuado
-  const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  // Enlace universal de la API oficial de WhatsApp
+  const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
   
-  let url = "";
-  if (esMovil) {
-    url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
-  } else {
-    url = `https://web.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
-  }
-  
-  window.open(url, '_blank');
+  // Redirección directa en la misma pestaña (evita el bloqueo de ventanas emergentes en navegadores Web)
+  window.location.href = url;
 }
